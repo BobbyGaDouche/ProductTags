@@ -2,6 +2,17 @@ const express = require('express');
 const request = require('request');
 const app = express();
 const port = process.env.PORT || 3000;
+app.get('/', (req, res, next) => {
+
+    res.status(200).json({
+        status: 'success',
+        data: {
+            name: 'name of your app',
+            version: '0.1.0'
+        }
+    });
+
+});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
