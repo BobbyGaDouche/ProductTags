@@ -4,17 +4,7 @@ const request = require("request");
 const app = express();
 
 app.use(cors({ origin: "https://brewed.online" }));
-app.get('/', (req, res, next) => {
 
-    res.status(200).json({
-        status: 'success',
-        data: {
-            name: 'name of your app',
-            version: '0.1.0'
-        }
-    });
-
-});
 app.put("/update-product-tags", (req, res) => {
   const accessToken = "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";
   const productId = req.body.productId;
@@ -22,7 +12,7 @@ app.put("/update-product-tags", (req, res) => {
 
   const options = {
     method: "PUT",
-    url: `https://www.brewed.online/admin/api/2021-01/products/${productId}/tags.json`,
+    url: `https://vp8caagnakvfqvkk-25670287456.shopifypreview.com/admin/api/2021-01/products/${productId}/tags.json`,
     headers: {
       "Content-Type": "application/json",
       "X-Shopify-Access-Token": accessToken
@@ -42,9 +32,3 @@ app.put("/update-product-tags", (req, res) => {
 app.listen(3000, () => {
   console.log("Server listening on port 3000");
 });
-
-
-
-
-
-
